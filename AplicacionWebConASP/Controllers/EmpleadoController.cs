@@ -49,7 +49,7 @@ namespace AplicacionWebASP.NetClase02.Controllers
 
         [HttpPost]
         public ActionResult Save(String Nombre, String DUI, String Direccion,
-          String  Telefono, String Correo, String Cargo) {
+          String Telefono, String Correo, String Cargo) {
 
             using (EmpleadoEntities empleadoDb = new EmpleadoEntities())
             {
@@ -57,7 +57,8 @@ namespace AplicacionWebASP.NetClase02.Controllers
                 Tb.Emple_Nombre = Nombre;
                 Tb.Emple_DUI = DUI;
                 Tb.Emple_direccion = Direccion;
-                Tb.Emple_tel = Correo;
+                Tb.Emple_tel = Telefono;
+                Tb.Emple_email = Correo;
                 Tb.Emple_cargo = Cargo;
 
                 empleadoDb.tb_empleado.Add(Tb);

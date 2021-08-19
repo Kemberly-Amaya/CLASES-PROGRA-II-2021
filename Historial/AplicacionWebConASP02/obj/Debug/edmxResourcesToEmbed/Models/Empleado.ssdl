@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmpleadoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_empleado">
+    <Key>
+      <PropertyRef Name="idEmpleado" />
+    </Key>
+    <Property Name="idEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Emple_Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Emple_DUI" Type="varchar" MaxLength="50" />
+    <Property Name="Emple_direccion" Type="varchar" MaxLength="50" />
+    <Property Name="Emple_tel" Type="varchar" MaxLength="50" />
+    <Property Name="Emple_email" Type="varchar" MaxLength="50" />
+    <Property Name="Emple_cargo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="EmpleadoModelStoreContainer">
+    <EntitySet Name="tb_empleado" EntityType="Self.tb_empleado" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
