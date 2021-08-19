@@ -48,30 +48,60 @@ namespace AplicacionWebASP.NetClase02.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(String Nombre, String DUI, String Direccion,
-          String Telefono, String Correo, String Cargo) {
-
-            using (EmpleadoEntities empleadoDb = new EmpleadoEntities())
+        //Recibir los párametros a utilizar que vienen a traves del Post ---> Petición 
+        public ActionResult Save(int id,String Nombre, String DUI, String Direccion,
+          String  Telefono, String Correo, String Cargo) {
+          
+            using (EmpleadoEntities empleDb = new EmpleadoEntities())
             {
                 tb_empleado Tb = new tb_empleado();
-                Tb.Emple_Nombre = Nombre;
-                Tb.Emple_DUI = DUI;
-                Tb.Emple_direccion = Direccion;
-                Tb.Emple_tel = Telefono;
-                Tb.Emple_email = Correo;
-                Tb.Emple_cargo = Cargo;
 
-                empleadoDb.tb_empleado.Add(Tb);
-                empleadoDb.SaveChanges();
+                if (id == 0)
+                {
+                    Tb.Emple_Nombre = Nombre;
+                    Tb.Emple_DUI = DUI;
+                    Tb.Emple_direccion = Direccion;
+                    Tb.Emple_tel = Telefono;
+                    Tb.Emple_email = Correo;
+                    Tb.Emple_cargo = Cargo;
+
+                    empleDb.tb_empleado.Add(Tb);
+                    empleDb.SaveChanges();
+
+
+                }
+                else {
+                    int idupdate = id;
+                    tb_empleado editar = empleDb.tb_empleado.Where(x => x.idEmpleado == idupdate).FirstOrDefault();
+                    editar.Emple_Nombre = Nombre;
+
+                    empleDb.SaveChanges();
+
+                }
+                
+
+                
             
             
             }
 
+            //Referencia ala vista de empleado
                 return Redirect("/Empleado/Empleado");
         
         
         }
-        public ActionResult Registro() {
+        public ActionResult Registro (String nombre, int id=0) {
+
+            ViewBag.id = id;
+            ViewBag.nombre = nombre;
+            return View();
+        }
+
+        public ActionResult Edit(int id) {
+
+            //pasando id hacia la parte del fron- end
+            ViewBag.id = id;
+
             return View();
         }
     }

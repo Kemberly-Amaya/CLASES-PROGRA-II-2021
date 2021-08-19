@@ -40,18 +40,19 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@item.idEmpleado</td>
-                    <td>@item.Emple_Nombre</td>
-                    <td>@item.Emple_DUI</td>
-                    <td>@item.Emple_direccion</td>
-                    <td>@item.Emple_tel</td>
-                    <td>@item.Emple_email</td>
-                    <td>@item.Emple_cargo</td>
+            <tr>
+                <td>@item.idEmpleado</td>
+                <td>@item.Emple_Nombre</td>
+                <td>@item.Emple_DUI</td>
+                <td>@item.Emple_direccion</td>
+                <td>@item.Emple_tel</td>
+                <td>@item.Emple_email</td>
+                <td>@item.Emple_cargo</td>
 
-                    @*Equivalente a etiqueta anchor aqui en asp.net*@
-                    <td>@Html.ActionLink("Eliminar","Delete", new {Id =item.idEmpleado}, new {@class= "btn btn-danger "})</td>
-                </tr>
+                @*Equivalente a etiqueta anchor aqui en asp.net*@
+                <td>@Html.ActionLink("Eliminar", "Delete", new { Id = item.idEmpleado }, new { @class = "btn btn-danger " })</td>
+                <td>@Html.ActionLink("Edit", "Registro", new { Id = item.idEmpleado, nombre = item.Emple_Nombre}, new { @class = "btn btn-danger " })</td>
+            </tr>
 
             }
 
