@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Recibo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Recibo</h2>
+
+<table table class="table table-success table-striped">
+    <th>
+        Nombre:
+    </th>
+
+    <th>
+        Antiguedad :
+    </th>
+
+    <th>
+        Valor por hora :
+    </th>
+
+    <th>
+        Sueldo bruto :
+    </th>
+    <th>
+        Sueldo con descuentos :
+    </th>
+
+    <th>
+        Sueldo total :
+    </th>
+
+    <tbody>
+
+        <tr>
+            <td>@ViewBag.nombre</td>
+            <td>@ViewBag.antiguedad</td>
+            <td>@ViewBag.valorPHora</td>
+            <td>@ViewBag.SBruto</td>
+            <td>@ViewBag.SBruto</td>
+            <td>@ViewBag.DesTotal</td>
+            <td>@ViewBag.SDesc</td>
+        </tr>
+
+    </tbody>
+</table>

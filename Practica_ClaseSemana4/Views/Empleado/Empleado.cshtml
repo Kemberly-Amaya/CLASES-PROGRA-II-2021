@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Acceso";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Recibo</h2>
+
+@using (Html.BeginForm("Recibo", "Empleado"))
+{
+    //Nombre de los name igual al de los parametros en el controlador
+    <label>Ingresa el valor por hora :</label>
+    <input type="text" name="valorPorHora" />
+    <br />
+
+    <label>Nombre empleado :</label>
+    <input type="text" name="NombreEmpleado" />
+    <br />
+
+    <label>Años laborados :</label>
+    <input type="text" name="tiempoLabor" />
+    <br />
+
+    <label>Horas trabajadas por mes :</label>
+    <input type="text" name="horasDeTrabajo" />
+    <br />
+
+    <input type="submit" />
+
+
+}
+
+

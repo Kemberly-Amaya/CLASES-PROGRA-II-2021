@@ -1,0 +1,29 @@
+﻿@*Esto equivale a using*@ 
+@model List<Practica_ClaseSemana4.Models.ClsUsuario>
+@{
+    ViewBag.Title = "Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Bienvenidos</h2>
+
+@*Tipo de petición*@
+@*Acción/ Controlador*@
+@using (Html.BeginForm("Usuario", "Usuario", FormMethod.Post))
+{
+    //Nombre de los name igual al de los parametros en el controlador
+    <label>Ingresa tu usuario :</label>
+    <input type="text" name="Usuario" />
+    <br />
+
+    <label>Ingresa tu contraseña :</label>
+    <input type="text" name="Pass" />
+    <br />
+
+    <input type="submit" />
+
+
+}
+
+
