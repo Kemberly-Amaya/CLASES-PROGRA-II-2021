@@ -9,7 +9,35 @@
 @using (Html.BeginForm("Recibo", "Empleado"))
 {
     //Nombre de los name igual al de los parametros en el controlador
-    <label>Ingresa el valor por hora :</label>
+
+
+
+    <div class="col-6">
+        <label>Valor por hora:</label>
+        <input type="text" class="form-control" name="valorPorHora" placeholder="Valor por hora $">
+    </div>
+    <div class="col-6">
+        <label>Nombre empleado:</label>
+        <input type="text" class="form-control" name="NombreEmpleado" placeholder="Ingrese su nombre completo">
+    </div>
+    <div class="col-6">
+        <label>Años laborados :</label>
+        <input type="text" class="form-control" name="tiempoLabor" placeholder="Años de servicio en la empresa">
+    </div>
+
+    <div class="col-6">
+        <label>Horas trabajadas por mes :</label>
+        <input type="text" class="form-control" name="horasDeTrabajo" placeholder="Horas de trabajo por mes">
+    </div>
+
+
+        <button type="submit" class="btn btn-primary">Continuar</button>
+    
+
+}
+
+
+@*<label>Ingresa el valor por hora :</label>
     <input type="text" name="valorPorHora" />
     <br />
 
@@ -25,9 +53,4 @@
     <input type="text" name="horasDeTrabajo" />
     <br />
 
-    <input type="submit" />
-
-
-}
-
-
+    <input type="submit" />*@

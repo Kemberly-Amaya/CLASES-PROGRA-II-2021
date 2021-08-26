@@ -1,4 +1,4 @@
-﻿@*Esto equivale a using*@ 
+﻿@*Esto equivale a using*@
 @model List<Practica_ClaseSemana4.Models.ClsUsuario>
 @{
     ViewBag.Title = "Usuario";
@@ -6,14 +6,30 @@
 }
 
 
-<h2>Bienvenidos</h2>
+<center><h2>Bienvenidos</h2></center>
 
 @*Tipo de petición*@
 @*Acción/ Controlador*@
 @using (Html.BeginForm("Usuario", "Usuario", FormMethod.Post))
 {
     //Nombre de los name igual al de los parametros en el controlador
-    <label>Ingresa tu usuario :</label>
+    <center>
+        <div class="form-group" border=" 1">
+            <label>Usuario</label>
+            <input type="text" required placeholder="Escribe tu usuario" class="form-control" name="Usuario">
+            <small name="Usuario" class="form-text text-muted">We'll never share your user with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label>Contraseña</label>
+            <input type="password" required placeholder="Escribe tu contraseña" class="form-control" name="Pass">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+    </center>
+
+
+}
+@*<label>Ingresa tu usuario :</label>
     <input type="text" name="Usuario" />
     <br />
 
@@ -21,9 +37,8 @@
     <input type="text" name="Pass" />
     <br />
 
-    <input type="submit" />
+    <input type="submit" />*@
 
 
-}
 
 
