@@ -1,0 +1,62 @@
+﻿
+@*//LLamamos a la tabla emleados*@
+@model List<AplicacionWebASP.NetClase02.Models.tb_empleado>
+@{
+    ViewBag.Title = "Empleado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Empleado</h2>
+
+<table  class="table table-dark table-hover">
+
+    <table class="table table-bordered border-primary">
+
+        <thead>
+        <th>
+            Id Empleado
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            DUI
+        </th>
+        <th>
+            Dirección
+        </th>
+        <th>
+            Teléfono
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Cargo
+        </th>
+
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.idEmpleado</td>
+                <td>@item.Emple_Nombre</td>
+                <td>@item.Emple_DUI</td>
+                <td>@item.Emple_direccion</td>
+                <td>@item.Emple_tel</td>
+                <td>@item.Emple_email</td>
+                <td>@item.Emple_cargo</td>
+
+                @*Equivalente a etiqueta anchor aqui en asp.net*@
+                <td>@Html.ActionLink("Eliminar", "Delete", new { Id = item.idEmpleado }, new { @class = "btn btn-danger " })</td>
+                <td>@Html.ActionLink("Edit", "Registro", new { Id = item.idEmpleado, nombre = item.Emple_Nombre}, new { @class = "btn btn-danger " })</td>
+            </tr>
+
+            }
+
+        </tbody>
+    </table>
+</table>
+

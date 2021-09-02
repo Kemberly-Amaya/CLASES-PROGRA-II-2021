@@ -1,0 +1,33 @@
+﻿@model AplicacionWebASP.NetClase02.Models.ViewModels.PersonaViewModel
+@* variable "model" sirve para ---> hacer referencia a la clase donde esta la evaluacion del ligue entre el modelos y el controlador*@
+
+@{
+    ViewBag.Title = "PersonaViewModel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PersonaViewModel</h2>
+
+@*//Helper ---> "Using" RazorPages*@@*peticion de tipo post que llegue al controlador de Persona*@
+@*@using (Html.BeginForm) --- Se utilizaran mucho ya que serán helpers que asociarán la clase de persona viemmodel on el controler haciendo la inyección*@
+@using (Html.BeginForm("DescripcionViewModels", "Persona", FormMethod.Post))
+{
+    //ASOCIACION DE LA CLASE ESPEJO Y HACER VALIDACIONES
+    <br>
+    @Html.LabelFor(m => m.Id) //Html hace referencia al helpers de los html, expresion lamda para asociar atributos
+    @Html.TextBoxFor(m => m.Id) //Cajas de texto -- for hace referencia al name , generá o hace referencia a un Input para introducir text
+    @Html.ValidationMessageFor(m => m.Id, null, new { @class = "red" }) // Prom. Reactiva --
+                                                                        // Mostrar mensajes con respecto a lo que ha ocurrido en el back_end
+
+
+    //Se esta llegando directamente desde la vista hacia los validadores que esta en el controler
+    <br>
+    @Html.LabelFor(m => m.Nombre)
+    @Html.TextBoxFor(m => m.Nombre)                   //para mostrar mensjae dejamos espaco null, y creamos un objeto vacio
+                                                      //que contendrá una clase de boostrap
+    @Html.ValidationMessageFor(m => m.Nombre, null, new { @class = "red" })
+
+
+
+    <input type="submit" /> //enviar los datos, mediante un input
+}
