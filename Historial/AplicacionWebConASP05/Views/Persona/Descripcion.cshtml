@@ -1,0 +1,44 @@
+﻿@model List<AplicacionWebASP.NetClase02.Models.ClsPersona>
+@{
+    ViewBag.Title = "Descripcion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var variable = "Kemberly";
+}
+
+@*Instruciones, con formulario*@
+@*Cuando es metodo get no es necesario afregar instruccion para el metdod post si*@
+@*Esta es una peticion de tipo get*@
+@*Esto es equivalente a codigo en petcion en html, pero aqui con asp.net*@
+@using (Html.BeginForm("Descripcion", "Persona", FormMethod.Get)) { 
+
+    <label>Agrega tu nombre</label>
+
+    <input type="text" name="variable"/>
+
+    <input  type="submit" />
+}
+<h1>@ViewBag.variabledinamica</h1>
+
+<table table class="table table-success table-striped">
+    <th>
+        ID
+    </th>
+    <th>
+        Nombre
+    </th>
+
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Nombre</td>
+        </tr>
+
+            }
+
+    </tbody>
+</table>
+     
