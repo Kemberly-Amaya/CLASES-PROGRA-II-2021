@@ -1,0 +1,36 @@
+﻿@model AppCorePracticaUno.Models.Persona
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+@using (Html.BeginForm("Index", "Persona", FormMethod.Post))
+{
+
+    @Html.LabelFor(m => m.NombreUsuario )
+    @Html.TextBoxFor(m => m.NombreUsuario)
+    @Html.ValidationMessageFor(m => m.NombreUsuario)
+    <br />
+
+    @Html.LabelFor(m => m.Edad )
+    @Html.TextBoxFor(m => m.Edad)
+    @Html.ValidationMessageFor(m => m.Edad)
+    <br />
+
+    @Html.LabelFor(m => m.Sexo )
+    @Html.TextBoxFor(m => m.Sexo)
+    @Html.ValidationMessageFor(m => m.Sexo)
+    <br />
+
+    @Html.LabelFor(m => m.Tipodeeducacion )
+    @Html.TextBoxFor(m => m.Tipodeeducacion)
+    @Html.ValidationMessageFor(m => m.Tipodeeducacion)
+    <br />
+
+    <br />
+    <input type="submit">
+    <br>
+
+}
